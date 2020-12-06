@@ -1,4 +1,4 @@
-# huee-open-course-check
+# Hacettepe EEE Open Course Check
 Checks whether a course is open in this term
 
 # Disclaimer
