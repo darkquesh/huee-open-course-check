@@ -44,15 +44,4 @@ allCs = sorted(getCourses())
 
 res = sorted(set(allCs).intersection(openCs))
 resToStr = ' '.join(map(str,res))
-print("Open courses this term:",resToStr)
-
-
-#print("openCs: ",openCs)
-#print("\n\nallCs: ",allCs)
-
-
-
-'''for course in courses:
-	print(course.text.strip())'''
-
-#print(page.text)
+print("Courses open this term:",resToStr)
