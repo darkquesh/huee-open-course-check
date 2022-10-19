@@ -12,7 +12,7 @@ def openCourses():
 
 	a = []
 	for course_elem in open_courses:
-		course = course_elem.find('span')
+		course = course_elem.find('b')
 		if course is not None:
 			course = course.text.strip()[:6]
 			a.append(course)
