@@ -8,7 +8,7 @@ python3 -m pip install beautifulsoup4
 python3 checkCourse.py
 ```
 
-Written in Python and used BeautifulSoup library.
+Written in Python3 and used BeautifulSoup library.
 
 # Disclaimer
 #### I do not take any responsibility. You are responsible for your own actions. Use it at your own risk.</br></h3>
