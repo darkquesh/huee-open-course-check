@@ -3,8 +3,10 @@ Checks which courses are available in an academic term
 
 To run, download checkCourse.py file and navigate into the download folder and execute the following lines:  
 
-`python3 -m pip install beautifulsoup4`  
-`python3 checkCourse.py`
+```
+python3 -m pip install beautifulsoup4  
+python3 checkCourse.py
+```
 
 Written in Python and used BeautifulSoup library.
 
