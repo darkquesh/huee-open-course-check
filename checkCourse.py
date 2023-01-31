@@ -5,8 +5,8 @@ def openCourses():
 	URL = 'http://www.ee.hacettepe.edu.tr/?link=300600&sublink=ugWeekly'
 	page = requests.get(URL)
 
-	soup = BeautifulSoup(page.content,'html.parser')
-	results = soup.find(id='mainPage')
+	soup = BeautifulSoup(page.content, 'html.parser')
+	results = soup.find(id = 'mainPage')
 
 	open_courses = results.find_all('a')
 
@@ -25,9 +25,9 @@ def getCourses():
 	page = requests.get(URL)
 
 	soup = BeautifulSoup(page.content,'html.parser')
-	results = soup.find(id='mainPage')
+	results = soup.find(id = 'mainPage')
 
-	courses = results.find_all('td',width="10%")
+	courses = results.find_all('td', width="10%")
 
 	b = []
 	for course_elem in courses:
@@ -43,5 +43,17 @@ openCs = sorted(openCourses())
 allCs = sorted(getCourses())
 
 res = sorted(set(allCs).intersection(openCs))
-resToStr = ' '.join(map(str,res))
-print("Courses open this term:",resToStr)
+resToStr = '\n'.join(map(str,res))
+print("Open courses this term:\n", end='')
+print(resToStr)
+
+
+#print("openCs: ",openCs)
+#print("\n\nallCs: ",allCs)
+
+
+
+'''for course in courses:
+	print(course.text.strip())'''
+
+#print(page.text)
