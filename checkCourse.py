@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 def openCourses():
-	URL = 'http://www.ee.hacettepe.edu.tr/?link=300600&sublink=ugWeekly'
+	URL = 'http://www.ee.hacettepe.edu.tr/?link=300600&sublink=ugWeekly&lang=e'
 	page = requests.get(URL)
 
 	soup = BeautifulSoup(page.content, 'html.parser')
@@ -21,13 +21,14 @@ def openCourses():
 	return set(a)
 
 def getCourses():
-	URL = 'http://www.ee.hacettepe.edu.tr/?link=301000'
+	URL = 'http://www.ee.hacettepe.edu.tr/?link=301000&lang=e'
 	page = requests.get(URL)
 
 	soup = BeautifulSoup(page.content,'html.parser')
 	results = soup.find(id = 'mainPage')
 
 	courses = results.find_all('td', width="10%")
+	#course_name = results.find_all('td', width="10%")
 
 	b = []
 	for course_elem in courses:
@@ -39,13 +40,18 @@ def getCourses():
 			continue
 	return set(b)
 
-openCs = sorted(openCourses())
-allCs = sorted(getCourses())
+def displayCourses():
+	openCs = sorted(openCourses())
+	allCs = sorted(getCourses())
 
-res = sorted(set(allCs).intersection(openCs))
-resToStr = '\n'.join(map(str,res))
-print("Open courses this term:\n", end='')
-print(resToStr)
+	res = sorted(set(allCs).intersection(openCs))
+	resToStr = '\n'.join(map(str,res))
+	
+	print("Open courses this term:\n", end='')
+	print(resToStr)
+
+if __name__ == '__main__':
+	displayCourses()
 
 
 #print("openCs: ",openCs)
