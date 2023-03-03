@@ -1,4 +1,4 @@
-# Hacettepe EEE Open Course Check
+# STUD - Student's Unique Depression
 Checks which courses are available in an academic term 
 
 To run, download all the files and navigate into the download folder and execute the following lines:  
