@@ -1,11 +1,11 @@
 # Hacettepe EEE Open Course Check
 Checks which courses are available in an academic term 
 
-To run, download checkCourse.py file and navigate into the download folder and execute the following lines:  
+To run, download all the files and navigate into the download folder and execute the following lines:  
 
 ```
-python3 -m pip install beautifulsoup4  
-python3 checkCourse.py
+python3 -m pip install pathlib Pillow glob2 beautifulsoup4 requests
+python3 STUD.py
 ```
 
 Written in Python3 and used BeautifulSoup library.
